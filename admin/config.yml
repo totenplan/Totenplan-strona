@@ -6,13 +6,10 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "site"
-    label: "Ustawienia strony"
-    files:
-      - file: "data/site.json"
-        label: "Treść strony"
-        name: "strona"
-        fields:
-          - { label: "Tytuł", name: "title", widget: "string" }
-          - { label: "Podtytuł", name: "subtitle", widget: "string" }
-          - { label: "Opis", name: "description", widget: "text" }
+  - name: "posts"
+    label: "Projekty"
+    folder: "content/posts"
+    create: true
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Treść", name: "body", widget: "markdown" }
