@@ -39,4 +39,141 @@
       margin-bottom: 1.6rem;
     }
     .accent {
-      color: #657c4
+      color: #657c4a;
+      font-weight: 700;
+    }
+    .oferta-btn {
+      background: #657c4a;
+      color: #fff !important;
+      border-radius: 7px;
+      font-weight: 600;
+      margin-right: 1em;
+      border: none;
+      padding: 0.7em 2em;
+      box-shadow: 0 3px 16px #657c4a10;
+    }
+    .oferta-btn:hover {
+      background: #485c34;
+    }
+    .gallery-btn {
+      background: #fff;
+      color: #657c4a !important;
+      border: 2px solid #657c4a;
+      border-radius: 7px;
+      font-weight: 600;
+      padding: 0.7em 2em;
+    }
+    .gallery-btn:hover {
+      background: #e6eddc;
+      color: #485c34 !important;
+    }
+    .social a {
+      margin-right: 1.2rem;
+      color: #657c4a;
+      font-size: 1.8rem;
+      transition: color 0.2s;
+    }
+    .social a:hover {
+      color: #23201b;
+    }
+    .kontakt-card {
+      background: #f9f7f4;
+      border-radius: 1em;
+      padding: 1.2em 1.4em 0.8em 1.4em;
+      box-shadow: 0 1px 12px #cfc6b255;
+      margin-top: 1.4em;
+    }
+    @media (max-width: 700px) {
+      .logo-img { max-width: 130px; }
+      main h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAWIGACJA -->
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>To Ten Plan</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#kontakt" role="button">Kontakt</a></li>
+    </ul>
+  </nav>
+  <!-- LOGO -->
+  <header>
+    <img src="logo.png" alt="To Ten Plan - logo" class="logo-img" />
+    <h1>Design Studio by Paulina Łuczak</h1>
+  </header>
+  <!-- TREŚĆ -->
+  <main class="container">
+    <div class="grid">
+      <section>
+        <hgroup>
+          <h2 class="welcome">Witaj na stronie <span class="accent">To Ten Plan!</span></h2>
+          <h3>Kreatywność. Design. Inspiracja.</h3>
+        </hgroup>
+        <p>
+          <b>To Ten Plan</b> to miejsce, gdzie wizje nabierają kształtów, a projekty zamieniają się w prawdziwe dzieła.<br>
+          Pomagam zrealizować <span class="accent">Twoje pomysły</span> i marzenia dzięki doświadczeniu oraz artystycznej pasji.<br>
+          <span class="accent">Design Studio by Paulina Łuczak</span> – indywidualne podejście, estetyka i styl.
+        </p>
+        <figure>
+          <img src="logo.png" alt="Logo To Ten Plan" style="max-width: 160px; background:#f7f4ef; padding:1em; border-radius:18px; margin:auto;">
+          <figcaption>
+            <a href="mailto:kontakt@totenplan.pl" target="_blank">kontakt@totenplan.pl</a>
+          </figcaption>
+        </figure>
+        <h3>Czym się zajmuję?</h3>
+        <p>
+          Oferuję <b>projektowanie graficzne</b>, identyfikację wizualną, branding, social media, grafiki na zamówienie oraz konsultacje kreatywne.<br>
+          Zapraszam firmy, marki i osoby prywatne — razem stworzymy coś wyjątkowego!
+        </p>
+        <h3>Sprawdź ofertę i galerię</h3>
+        <p>
+          <a href="#oferta" class="oferta-btn">Zobacz ofertę</a>
+          <a href="#galeria" class="gallery-btn">Galeria</a>
+        </p>
+        <div class="social" style="margin-bottom:1.3em;">
+          <span style="font-size:1.07em;">Znajdziesz mnie także tutaj:</span><br>
+          <a href="https://www.facebook.com/TwojProfil" target="_blank" aria-label="Facebook">
+            <svg width="25" height="25" fill="currentColor"><use xlink:href="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/facebook.svg#icon"/></svg>
+          </a>
+          <a href="https://www.instagram.com/TwojProfil" target="_blank" aria-label="Instagram">
+            <svg width="25" height="25" fill="currentColor"><use xlink:href="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg#icon"/></svg>
+          </a>
+          <!-- Dodaj kolejne social media -->
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- SEKCJA KONTAKT -->
+  <section id="kontakt" aria-label="Kontakt">
+    <div class="container kontakt-card">
+      <article>
+        <hgroup>
+          <h2>Kontakt</h2>
+          <h3>Napisz lub zadzwoń</h3>
+        </hgroup>
+        <form class="grid">
+          <input type="text" id="firstname" name="firstname" placeholder="Imię" aria-label="Imię" required />
+          <input type="email" id="email" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail" required />
+          <button type="submit" onclick="event.preventDefault()">Wyślij</button>
+        </form>
+        <div style="margin-top:1em;">
+          <b>E-mail:</b> <a href="mailto:kontakt@totenplan.pl">kontakt@totenplan.pl</a><br>
+          <b>Telefon:</b> 123 456 789
+        </div>
+      </article>
+    </div>
+  </section>
+  <footer class="container" style="text-align:center;">
+    <small>
+      <a href="mailto:kontakt@totenplan.pl">kontakt@totenplan.pl</a> •
+      <a href="https://www.facebook.com/TwojProfil" target="_blank">Facebook</a> •
+      <a href="https://www.instagram.com/TwojProfil" target="_blank">Instagram</a>
+    </small>
+  </footer>
+</body>
+</html>
