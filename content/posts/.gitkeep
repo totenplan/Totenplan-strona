@@ -1,1 +1,9 @@
-
+/
+├── index.html           ← twoja strona główna (zwykły HTML)
+├── uploads/             ← pusty folder (albo z obrazkami)
+├── content/
+│    └── posts/
+│         └── .gitkeep   ← pusty plik (dla zachowania folderu)
+└── admin/
+     ├── config.yml
+     └── index.html
