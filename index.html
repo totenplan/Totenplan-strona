@@ -1,199 +1,150 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <title>To Ten Plan – Design Studio by Paulina Łuczak</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TO TEN PLAN – Projektowanie Wnętrz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ivory: #FAF9F6;
-      --accent: #dabfa2;
-      --font-main: 'Montserrat', 'Open Sans', Arial, sans-serif;
-      --font-alt: 'Open Sans', Arial, sans-serif;
-      --button: #23211c;
-      --button-hover: #dabfa2;
-    }
-    html, body {
-      background: var(--ivory);
-      color: #24221e;
-      font-family: var(--font-main);
+    body {
       margin: 0;
-      padding: 0;
-      width: 100vw;
-      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f5f0;
+      color: #333;
     }
-    body { margin: 0; }
-    .container {
-      width: 100%;
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-    nav {
+    header {
       display: flex;
-      justify-content: center;
-      gap: 2.4em;
-      padding: 2em 0 3em 0;
-      background: var(--ivory);
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header img {
+      height: 60px;
     }
     nav a {
+      margin-left: 30px;
       text-decoration: none;
-      color: #2a2a2a;
+      color: #333;
       font-weight: 500;
-      font-size: 1.12em;
-      padding: 0.5em 1.1em;
-      border-radius: 8px;
-      transition: background .17s;
     }
-    nav a:hover {
-      background: var(--accent);
-      color: #23211c;
-    }
-    .hero-img {
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 4em auto 3.2em auto;
-      border-radius: 2em;
-      box-shadow: 0 4px 32px #e1dbc1af;
-      background: #fff;
-      object-fit: cover;
-    }
-    .lead {
-      font-size: 1.25em;
-      font-family: var(--font-alt);
-      color: #23211c;
-      margin-bottom: 2.2em;
-      text-align: center;
-      line-height: 1.7;
-      font-weight: 400;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .section-title {
-      font-size: 2rem;
-      margin: 2em 0 0.3em 0;
-      font-weight: 700;
-      color: #23211c;
-      letter-spacing: 0.5px;
-      text-align: center;
-    }
-    .section-text {
-      font-size: 1.13em;
-      color: #36322c;
-      line-height: 1.7;
-      text-align: center;
-      margin-bottom: 2.3em;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .buttons {
+    .hero {
+      background-image: url('grafika1.png');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
       display: flex;
-      gap: 1.2em;
+      align-items: center;
       justify-content: center;
-      margin: 2.2em 0 2.4em 0;
-    }
-    .btn {
-      background: var(--button);
+      text-align: center;
       color: #fff;
-      font-size: 1.13em;
-      padding: 0.68em 2.3em;
-      border-radius: 14px;
-      border: none;
-      font-family: var(--font-main);
-      letter-spacing: 0.6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .15s, color .15s;
-      text-decoration: none;
+      padding: 40px;
     }
-    .btn:hover {
-      background: var(--button-hover);
-      color: #23211c;
+    .section {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .contact {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 1px 16px #e3dac9a7;
-      padding: 2.3em 1.5em 1.5em 1.5em;
-      margin: 2.7em auto 3em auto;
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 20px;
       text-align: center;
-      max-width: 440px;
-      color: #23211c;
-      font-size: 1.1em;
     }
-    .socmed {
-      margin-top: 1em;
+    p {
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 1.4em;
+      gap: 30px;
     }
-    .socmed a {
-      color: #6e6e6e;
-      font-size: 2rem;
-      text-decoration: none;
-      transition: color .15s;
-    }
-    .socmed a:hover { color: #dabfa2; }
-    footer {
+    .services li {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      flex: 1 1 250px;
       text-align: center;
-      padding: 3em 0 2em 0;
-      color: #aeaeae;
-      background: var(--ivory);
-      font-size: 0.99em;
-      border-top: 1px solid #eceae5;
     }
-    @media (max-width: 700px) {
-      .container { padding: 0 7vw; }
-      .section-title { font-size: 1.3rem; }
-      .hero-img { max-width: 97vw; }
+    footer {
+      background-color: #eae7df;
+      padding: 40px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- HERO (banner z grafiką) -->
-    <img src="grafika1.png" alt="Projektowanie wnętrz To Ten Plan" class="hero-img" />
-    <!-- Nawigacja -->
+  <header>
+    <img src="logo.JPG" alt="Logo To Ten Plan" />
     <nav>
-      <a href="#oferta">Oferta</a>
-      <a href="#galeria">Galeria</a>
+      <a href="#o-mnie">O mnie</a>
+      <a href="#uslugi">Usługi</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <!-- Treść powitalna -->
-    <div class="lead">
-      Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność
+  </header>
+
+  <section class="hero"></section>
+
+  <section id="o-mnie" class="section">
+    <h2>O mnie</h2>
+    <p>
+      Projektuję funkcjonalne, estetyczne wnętrza, które nie tylko pięknie wyglądają,
+      ale przede wszystkim odpowiadają na realne potrzeby domowników.<br><br>
+      Zajmujemy się również wykończeniami pod klucz oraz metamorfozami mieszkań – od pomysłu,
+      przez projekt, aż po realizację. Wszystko w jednym miejscu.<br><br>
+      Projektowanie i wykończenia to nie tylko moja praca, to moja pasja. Śledzę nowe trendy,
+      poznaję nowinki budowlane i technologiczne, by proponować nowoczesne i praktyczne
+      rozwiązania, które naprawdę mają znaczenie.<br><br>
+      Na co dzień współpracuję z doświadczonymi i solidnymi fachowcami – ekipą wykończeniową,
+      elektrykiem, hydraulikiem oraz stolarzem. Dzięki temu zapewniam klientom kompleksową
+      obsługę, bez stresu i bez konieczności szukania wykonawców na własną rękę.<br><br>
+      Bazuję na sprawdzonych materiałach bardzo dobrej jakości, które są dostępne w sieciowych
+      sklepach oraz hurtowniach. Dzięki temu mogę tworzyć wnętrza efektowne i trwałe, a
+      jednocześnie przyjazne dla portfela.<br><br>
+      Z TO TEN PLAN stworzysz przestrzeń, do której chce się wracać. Zapraszam do współpracy!
+    </p>
+  </section>
+
+  <section id="uslugi" class="section services">
+    <h2>Usługi</h2>
+    <ul>
+      <li><strong>Projektowanie wnętrz</strong><br>Funkcjonalne i estetyczne koncepcje dopasowane do Twojego stylu życia.</li>
+      <li><strong>Wykończenia pod klucz</strong><br>Kompleksowa realizacja – od projektu po przekazanie kluczy.</li>
+      <li><strong>Metamorfozy mieszkań</strong><br>Nowe życie dla Twoich wnętrz – modernizacja, stylizacja, przebudowa.</li>
+    </ul>
+  </section>
+
+  <section id="kontakt" class="section">
+    <h2>Kontakt</h2>
+    <p style="text-align: center; font-size: 20px;">
+      <strong>Mail:</strong> <a href="mailto:totenplan@gmail.com">totenplan@gmail.com</a><br>
+      <strong>Telefon:</strong> <a href="tel:+48690895089">690 895 089</a><br><br>
+      <strong>Facebook:</strong> <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank">To Ten Plan</a><br>
+      <strong>Instagram:</strong> <a href="https://www.instagram.com/to_ten_plan/" target="_blank">@to_ten_plan</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 TO TEN PLAN | Projekt + Realizacja + Nadzór<br>
+    <div class="social">
+      <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/to_ten_plan/" target="_blank">Instagram</a>
     </div>
-    <div class="section-title">O mnie</div>
-    <div class="section-text">
-      Projektuję funkcjonalne, estetyczne wnętrza, które nie tylko pięknie wyglądają, ale przede wszystkim odpowiadają na realne potrzeby domowników. <br>
-      Zajmujemy się również <b>wykończeniami pod klucz</b> oraz <b>metamorfozami mieszkań</b> – od pomysłu, przez projekt, aż po realizację. Wszystko w jednym miejscu.<br><br>
-      Projektowanie i wykończenia to nie tylko moja praca, to <b>moja pasja</b>. Śledzę nowe trendy, poznaję nowinki budowlane i technologiczne, by proponować nowoczesne i praktyczne rozwiązania, które naprawdę mają znaczenie.<br><br>
-      Na co dzień współpracuję z doświadczonymi i solidnymi fachowcami – ekipą wykończeniową, elektrykiem, hydraulikiem oraz stolarzem. Dzięki temu zapewniam klientom kompleksową obsługę, bez stresu i bez konieczności szukania wykonawców na własną rękę.<br><br>
-      Bazuję na sprawdzonych materiałach bardzo dobrej jakości, które są dostępne w sieciowych sklepach oraz hurtowniach. Dzięki temu mogę tworzyć wnętrza efektowne i trwałe, a jednocześnie przyjazne dla portfela.<br><br>
-      <b>Z TO TEN PLAN stworzysz przestrzeń, do której chce się wracać. Zapraszam do współpracy!</b>
-    </div>
-    <div class="buttons">
-      <a href="#oferta" class="btn">Poznaj ofertę</a>
-      <a href="#galeria" class="btn">Galeria</a>
-    </div>
-    <!-- Kontakt -->
-    <section class="contact" id="kontakt">
-      <div style="font-weight:700; font-size:1.17em; margin-bottom:0.8em;">Kontakt</div>
-      <div><b>Paulina Łuczak</b></div>
-      <div><b>Mail:</b> <a href="mailto:totenpla@gmail.com">totenpla@gmail.com</a></div>
-      <div><b>Telefon:</b> <a href="tel:690895089">690 895 089</a></div>
-      <div class="socmed">
-        <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank" aria-label="Facebook">📘</a>
-        <a href="https://www.instagram.com/to_ten_plan/" target="_blank" aria-label="Instagram">📸</a>
-      </div>
-    </section>
-    <footer>
-      &copy; 2024 To Ten Plan • Paulina Łuczak
-    </footer>
-  </div>
+  </footer>
 </body>
 </html>
