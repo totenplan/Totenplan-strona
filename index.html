@@ -11,6 +11,8 @@
       color: #24221e;
       font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
       min-height: 100vh;
+      margin: 0;
+      padding: 0;
     }
     nav.container-fluid {
       background: #23201b;
@@ -25,52 +27,65 @@
     }
     header {
       background: #f8f6f2;
-      text-align: center;
-      padding: 2rem 0 1rem 0;
+      text-align: left;
+      padding: 2.5rem 7vw 1.5rem 7vw;
+      display: flex;
+      align-items: center;
+      gap: 3vw;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #edeada;
     }
     .logo-img {
-      max-width: 180px;
+      max-width: 160px;
       border-radius: 32px;
       background: #fcfbf8;
       box-shadow: 0 2px 18px #c0bca825;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+    .header-info {
+      flex: 1;
     }
     .main-title {
       font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: 2px;
       color: #23201b;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.1em;
+      margin-top: 0.5em;
     }
     .subtitle {
       color: #69714b;
-      font-size: 1.15rem;
+      font-size: 1.13rem;
       font-weight: 500;
-      margin-bottom: 1.8em;
+      margin-bottom: 0.5em;
     }
-    main.container {
+    main {
+      width: 100vw;
+      max-width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+    .section-wide {
+      width: 100vw;
+      max-width: 100vw;
+      padding: 2.5rem 8vw 2.5rem 8vw;
+      margin: 0;
+      border-bottom: 1px solid #edeada;
       background: #fcfbf8;
-      border-radius: 1.6rem;
-      box-shadow: 0 2px 18px #c0bca815;
-      padding: 2.3rem 2.2rem 1.5rem 2.2rem;
-      max-width: 650px;
-      margin-top: -2rem;
-      margin-bottom: 2rem;
+    }
+    .section-wide h2, .section-wide h3 {
+      margin-top: 0;
     }
     .accent {
       color: #69714b;
       font-weight: 700;
     }
-    .section-title {
-      font-size: 1.1em;
-      font-weight: 700;
-      margin-top: 2.2em;
-      color: #24221e;
-    }
     .description {
       font-size: 1.15em;
       line-height: 1.8;
       margin-bottom: 2em;
+      margin-top: 0;
     }
     .highlight {
       background: #edeada;
@@ -128,12 +143,33 @@
       box-shadow: 0 1px 12px #cfc6b240;
       margin-top: 1.4em;
       font-size: 1.08em;
+      max-width: 540px;
     }
-    @media (max-width: 750px) {
-      main.container {
-        padding: 1rem 0.5rem;
-      }
-      .logo-img { max-width: 120px; }
+    .kontakt-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3vw;
+      align-items: flex-start;
+    }
+    .kontakt-flex > * {
+      flex: 1 1 300px;
+      min-width: 240px;
+    }
+    footer.container {
+      width: 100vw;
+      max-width: 100vw;
+      text-align: center;
+      margin-top: 3rem;
+      margin-bottom: 1.5em;
+    }
+    @media (max-width: 950px) {
+      header, .section-wide { padding-left: 4vw; padding-right: 4vw; }
+    }
+    @media (max-width: 600px) {
+      header, .section-wide { padding: 1.3rem 2vw; }
+      .logo-img { max-width: 90px; }
+      .main-title { font-size: 1.25rem; }
+      .kontakt-flex { flex-direction: column; gap: 1.7rem;}
     }
   </style>
 </head>
@@ -150,12 +186,14 @@
   </nav>
   <header>
     <img src="logo.JPG" alt="Logo To Ten Plan" class="logo-img" />
-    <div class="main-title">To Ten Plan</div>
-    <div class="subtitle">Design Studio by Paulina Łuczak</div>
+    <div class="header-info">
+      <div class="main-title">To Ten Plan</div>
+      <div class="subtitle">Design Studio by Paulina Łuczak</div>
+    </div>
   </header>
-  <main class="container">
-    <section>
-      <h2 class="section-title">Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność</h2>
+  <main>
+    <section class="section-wide">
+      <h2>Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność</h2>
       <p class="description">
         Projektuję funkcjonalne, estetyczne wnętrza, które nie tylko pięknie wyglądają, ale przede wszystkim odpowiadają na realne potrzeby domowników. Zajmujemy się również <span class="highlight">wykończeniami pod klucz</span> oraz <span class="highlight">metamorfozami mieszkań</span> – od pomysłu, przez projekt, aż po realizację. Wszystko w jednym miejscu.
       </p>
@@ -182,13 +220,13 @@
       </div>
       <div class="social">
         <span>Znajdziesz mnie także tutaj:</span><br>
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">📘</a>
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">📸</a>
+        <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank" aria-label="Facebook">📘</a>
+        <a href="https://www.instagram.com/to_ten_plan/" target="_blank" aria-label="Instagram">📸</a>
         <a href="https://www.pinterest.com/" target="_blank" aria-label="Pinterest">📌</a>
       </div>
     </section>
-    <section id="oferta">
-      <h2 class="section-title">Oferta</h2>
+    <section class="section-wide" id="oferta">
+      <h2>Oferta</h2>
       <ul>
         <li>Projektowanie wnętrz od A do Z</li>
         <li>Konsultacje i stylizacje wnętrz</li>
@@ -197,29 +235,31 @@
         <li>Wykończenia pod klucz</li>
       </ul>
     </section>
-    <section id="galeria">
-      <h2 class="section-title">Galeria</h2>
+    <section class="section-wide" id="galeria">
+      <h2>Galeria</h2>
       <p>Przykładowe realizacje oraz projekty – zobacz więcej na moich profilach społecznościowych!</p>
       <a href="#" class="btn-outline">Przejdź do galerii (wkrótce)</a>
     </section>
-    <section id="kontakt" class="kontakt-card">
-      <h2 class="section-title">Kontakt</h2>
-      <form class="grid" style="max-width:440px;">
-        <input type="text" id="firstname" name="firstname" placeholder="Imię" aria-label="Imię" required />
-        <input type="email" id="email" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail" required />
-        <button type="submit" onclick="event.preventDefault()">Wyślij</button>
-      </form>
-      <div style="margin-top:1.4em;">
-        <b>E-mail:</b> <a href="mailto:totenpla@gmail.com">totenpla@gmail.com</a><br>
-        <b>Telefon:</b> <a href="tel:690895089">690 895 089</a>
+    <section class="section-wide" id="kontakt">
+      <h2>Kontakt</h2>
+      <div class="kontakt-flex">
+        <form class="grid" style="max-width:440px;">
+          <input type="text" id="firstname" name="firstname" placeholder="Imię" aria-label="Imię" required />
+          <input type="email" id="email" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail" required />
+          <button type="submit" onclick="event.preventDefault()">Wyślij</button>
+        </form>
+        <div class="kontakt-card">
+          <b>E-mail:</b> <a href="mailto:totenplan@gmail.com">totenplan@gmail.com</a><br>
+          <b>Telefon:</b> <a href="tel:690895089">690 895 089</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="container" style="text-align:center; margin-bottom: 1.5em;">
+  <footer class="container">
     <small>
-      <a href="mailto:totenpla@gmail.com">totenpla@gmail.com</a> • 
-      <a href="https://www.facebook.com/" target="_blank">Facebook</a> • 
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+      <a href="mailto:totenplan@gmail.com">totenplan@gmail.com</a> • 
+      <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank">Facebook</a> • 
+      <a href="https://www.instagram.com/to_ten_plan/" target="_blank">Instagram</a>
     </small>
   </footer>
 </body>
