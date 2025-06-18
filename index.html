@@ -1,317 +1,206 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>To Ten Plan – Design Studio by Paulina Łuczak</title>
-  <meta name="description" content="Projektowanie i wykończenia wnętrz. To Ten Plan – funkcjonalne, estetyczne i trwałe przestrzenie pod klucz.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;500&display=swap">
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #f3eee4;
-      --header-bg: #faf7f2;
-      --accent: #222;
-      --brand: #d1c8b3;
-      --light-accent: #fffdf6;
-      --button: #2a2a2a;
-      --button-hover: #5b523e;
-      --highlight: #f6eccc;
-      --contact: #3d3732;
+      --ecru-bg: #f4efe7;
+      --primary: #21211f;
+      --accent: #dfad7e;
+      --header-shadow: 0 2px 16px rgba(200,180,120,0.05);
     }
     html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
+      background: var(--ecru-bg) !important;
+      min-height: 100vh;
+      color: var(--primary);
     }
     body {
-      min-height: 100vh;
       margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: var(--main-bg);
-      color: #232323;
+      font-family: 'Segoe UI', 'Montserrat', 'Open Sans', Arial, sans-serif;
+      letter-spacing: 0.01em;
+    }
+    nav, main, footer, section {
+      background: var(--ecru-bg) !important;
     }
     nav {
-      background: #222;
-      color: #fff;
-      width: 100vw;
-      min-height: 56px;
+      box-shadow: var(--header-shadow);
+    }
+    .container-wide {
+      width: min(1120px, 96vw);
+      margin-inline: auto;
+    }
+    .header-flex {
       display: flex;
       align-items: center;
-      padding: 0 2.2vw;
-      box-sizing: border-box;
-      justify-content: space-between;
-    }
-    .nav-left {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-      padding: 0.7em 0;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2vw;
-      align-items: center;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.07rem;
-      font-weight: 400;
-      padding: 0.25em 1em;
-      border-radius: 7px;
-      transition: background 0.18s;
-    }
-    .nav-links a:last-child {
-      background: var(--button);
-      color: #fff;
-      font-weight: 500;
-      border-radius: 8px;
-      margin-left: 10px;
-      box-shadow: 0 2px 14px #bbb1;
-    }
-    .nav-links a:last-child:hover {
-      background: var(--button-hover);
-    }
-    header {
-      background: var(--header-bg);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100vw;
-      box-sizing: border-box;
-      padding: 3vw 3vw 2vw 3vw;
-      gap: 3vw;
-      min-height: 220px;
-      border-bottom: 1.5px solid #eee7;
+      gap: 2.5rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2rem;
+      flex-wrap: wrap;
     }
     .logo-img {
-      max-width: 128px;
-      width: 15vw;
-      min-width: 80px;
-      border-radius: 16px;
-      box-shadow: 0 1px 10px #b1aa98a8;
-      margin-right: 1vw;
-      background: var(--main-bg);
-      flex-shrink: 0;
-    }
-    .header-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-      min-width: 180px;
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      box-shadow: 0 2px 12px #ccc2a122;
+      object-fit: cover;
+      background: #fff;
+      border: 2px solid #e9e2d4;
     }
     .main-title {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
+      margin: 0;
       font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--accent);
-      margin-bottom: 0.2em;
+      letter-spacing: 0.01em;
     }
     .subtitle {
-      font-size: 1.18rem;
-      color: #504c44;
-      margin-top: 0;
-      font-family: 'Roboto', Arial, sans-serif;
+      color: #444;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
     }
-    .header-grafika {
-      max-width: 370px;
-      width: 30vw;
-      min-width: 120px;
-      border-radius: 1.3em;
-      margin-left: auto;
-      box-shadow: 0 4px 32px #b1aa9888;
-      background: var(--brand);
+    .hero-img {
       display: block;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 32px;
+      margin: 0 0 0 auto;
+      box-shadow: 0 6px 40px #cfbfa04a;
+      background: #fff9f4;
       object-fit: cover;
-      aspect-ratio: 1.5/1;
     }
-
-    /* Treść główna */
-    main {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      width: 100vw;
+    .main-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
-    .main-content {
-      width: 100vw;
-      max-width: none;
-      margin: 0;
-      padding: 0 0 2vw 0;
-      background: none;
-    }
-    .opis-section {
-      width: 100vw;
-      padding: 4vw 9vw 3vw 9vw;
-      background: var(--main-bg);
-    }
-    .opis-section h1 {
-      font-size: 2.1rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 1.3rem;
-      line-height: 1.14;
-    }
-    .opis-section p {
-      font-size: 1.21rem;
-      line-height: 1.7;
-      margin-top: 0.7em;
-      margin-bottom: 0.7em;
-      font-family: 'Roboto', Arial, sans-serif;
-      color: #2c2c2c;
+    .intro-section {
+      flex: 1 1 380px;
+      min-width: 340px;
+      max-width: 700px;
     }
     .highlight {
-      background: var(--highlight);
-      padding: 0.13em 0.5em;
-      border-radius: 0.5em;
-      font-weight: 700;
-      color: #483c1b;
+      background: #eee6d7;
+      border-radius: 8px;
+      padding: 0.08em 0.5em;
+      font-weight: 600;
       margin: 0 0.2em;
-      font-size: 1.09em;
+      display: inline-block;
     }
-    .strong {
-      font-weight: 700;
-      color: #3b3529;
-    }
-
-    /* Sekcja kontaktowa */
-    .contact-section {
-      width: 100vw;
-      background: var(--light-accent);
-      border-top: 1px solid #eee8;
-      padding: 3vw 9vw 3vw 9vw;
-      font-size: 1.17rem;
-      color: var(--contact);
-      box-sizing: border-box;
-      margin-top: 0;
-    }
-    .contact-heading {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.9em;
-      color: #25211c;
-    }
-    .contact-data {
+    .contact-card {
+      background: #f8f6f2;
+      border-radius: 15px;
+      padding: 1.1em 1.5em;
+      margin: 1.5em 0;
+      box-shadow: 0 1px 10px #b7a38514;
       display: flex;
-      gap: 2.5em;
+      flex-direction: column;
+      gap: 0.25em;
+      font-size: 1.05em;
+      border: 1px solid #e3dccd;
+      max-width: 350px;
+    }
+    .contact-card strong {
+      color: var(--primary);
+      font-size: 1.13em;
+      letter-spacing: 0.02em;
+    }
+    .socmed {
+      display: flex;
+      gap: 1.5em;
       align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.2em;
+      margin-top: 0.3em;
+      margin-bottom: 0.4em;
     }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.7em;
-      font-size: 1.14rem;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
-    .contact-item span {
-      color: #473d28;
-      font-weight: 500;
-    }
-    .contact-socials {
-      display: flex;
-      gap: 1.2em;
-      margin-top: 0.7em;
-    }
-    .contact-socials a {
+    .socmed a {
       display: inline-flex;
       align-items: center;
-      gap: 0.5em;
-      background: #4267B2;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.38em 1.2em;
-      border-radius: 1.7em;
+      gap: 0.35em;
+      color: #363534;
       font-weight: 500;
-      font-size: 1.07rem;
-      letter-spacing: 0.3px;
-      box-shadow: 0 2px 12px #b1aa9888;
-      transition: background 0.2s;
-    }
-    .contact-socials a.ig {
-      background: #de5a7a;
-    }
-    .contact-socials a:hover { opacity: 0.87; background: #2a2a2a; }
-    .contact-socials a.ig:hover { background: #a94460; }
-
-    /* Stopka */
-    footer {
-      background: #24211b;
-      color: #f3eee4;
-      font-size: 0.98rem;
-      padding: 2.1em 4vw 2em 4vw;
-      text-align: center;
-      margin-top: 0;
-    }
-    .footer-links {
-      margin-bottom: 0.7em;
-      display: flex;
-      justify-content: center;
-      gap: 1.7em;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      color: #eee7d0;
-      text-decoration: underline;
-      margin: 0 0.6em;
-      font-size: 1.06rem;
+      font-size: 1.15em;
+      text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: #e1bb65; }
-    /* Responsywność */
-    @media (max-width: 1100px) {
-      header { flex-direction: column; align-items: flex-start; gap: 2.1vw; }
-      .header-grafika { max-width: 210px; width: 38vw; min-width: 90px; margin: 0 0 0 0; }
+    .socmed a:hover {
+      color: #e4974e;
     }
-    @media (max-width: 700px) {
-      nav, header, .opis-section, .contact-section { padding-left: 3vw; padding-right: 3vw; }
-      .opis-section, .contact-section { padding-top: 5vw; padding-bottom: 5vw; }
-      .header-info { min-width: 120px; }
+    .socmed svg {
+      height: 1.3em;
+      width: 1.3em;
+      vertical-align: middle;
+      margin-bottom: 0.1em;
+      opacity: 0.85;
     }
-    @media (max-width: 480px) {
-      .main-title { font-size: 1.6rem; }
-      .opis-section h1 { font-size: 1.25rem; }
-      .header-grafika, .logo-img { max-width: 90vw; width: 90vw; margin: 0 auto; }
-      .contact-section, .opis-section { font-size: 1em; }
+    .modern-shape {
+      position: absolute;
+      z-index: 0;
+      right: 0;
+      top: 60px;
+      width: 410px;
+      max-width: 45vw;
+      pointer-events: none;
+      opacity: 0.12;
+    }
+    @media (max-width: 980px) {
+      .container-wide { width: 99vw; }
+      .header-flex { flex-direction: column; gap: 1.1rem; align-items: flex-start;}
+      .main-flex { flex-direction: column; gap: 2.5rem;}
+      .hero-img { margin: 2rem 0 0 0; }
+      .modern-shape { width: 310px;}
+    }
+    @media (max-width: 600px) {
+      .main-title { font-size: 1.5rem; }
+      .header-flex { gap: 0.7rem; }
+      .hero-img { max-width: 99vw; }
+      .modern-shape { display: none; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <span class="nav-left">TO TEN PLAN</span>
-    <div class="nav-links">
-      <a href="#oferta">Oferta</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#kontakt" style="background: #2a2a2a; color: #fff;">Kontakt</a>
-    </div>
+  <nav class="container-fluid" style="background: #23211c;">
+    <ul>
+      <li><strong style="color:#f5eee1; letter-spacing: 0.01em;">TO TEN PLAN</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#kontakt" role="button" style="background: #3492b7; color: #fff;">Kontakt</a></li>
+    </ul>
   </nav>
 
-  <header>
-    <img src="logo.JPG" alt="Logo To Ten Plan" class="logo-img" />
-    <div class="header-info">
-      <div class="main-title">To Ten Plan</div>
-      <div class="subtitle">Design Studio by Paulina Łuczak</div>
-    </div>
-    <img src="grafika1.png" alt="Wnętrze To Ten Plan" class="header-grafika" />
-  </header>
+  <!-- Nowoczesna grafika SVG -->
+  <svg class="modern-shape" viewBox="0 0 350 180" fill="none">
+    <path d="M30,60 Q70,10 140,60 T270,60 Q320,90 320,150 T240,160 Q180,180 120,130 Q70,90 30,60 Z"
+      fill="#eedcbb" opacity="0.82"/>
+  </svg>
 
-  <main>
-    <section class="main-content">
-      <div class="opis-section" id="oferta">
-        <h1>Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność</h1>
+  <main class="container-wide" style="position:relative; z-index:2;">
+    <section class="header-flex">
+      <img src="logo.JPG" alt="Logo To Ten Plan" class="logo-img" />
+      <div>
+        <h1 class="main-title">To Ten Plan</h1>
+        <div class="subtitle">Design Studio by Paulina Łuczak</div>
+      </div>
+    </section>
+
+    <section class="main-flex">
+      <div class="intro-section">
+        <h2 style="font-size:2rem; font-weight:700; margin-bottom:0.7em; color: #23211c;">
+          Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność
+        </h2>
         <p>
-          Projektuję funkcjonalne, estetyczne wnętrza, które nie tylko pięknie wyglądają, ale przede wszystkim odpowiadają na realne potrzeby domowników. 
-          Zajmujemy się również 
-          <span class="highlight">wykończeniami pod klucz</span> oraz 
+          Projektuję funkcjonalne, estetyczne wnętrza, które nie tylko pięknie wyglądają, ale przede wszystkim odpowiadają na realne potrzeby domowników. Zajmujemy się również
+          <span class="highlight">wykończeniami pod klucz</span> oraz
           <span class="highlight">metamorfozami mieszkań</span> – od pomysłu, przez projekt, aż po realizację. Wszystko w jednym miejscu.
         </p>
         <p>
-          Projektowanie i wykończenia to nie tylko moja praca, to <span class="strong">moja pasja</span>. Śledzę nowe trendy, poznaję nowinki budowlane i technologiczne, by proponować nowoczesne i praktyczne rozwiązania, które naprawdę mają znaczenie.
+          Projektowanie i wykończenia to nie tylko moja praca, to <b>moja pasja.</b> Śledzę nowe trendy, poznaję nowinki budowlane i technologiczne, by proponować nowoczesne i praktyczne rozwiązania, które naprawdę mają znaczenie.
         </p>
         <p>
           Na co dzień współpracuję z doświadczonymi i solidnymi fachowcami – ekipą wykończeniową, elektrykiem, hydraulikiem oraz stolarzem. Dzięki temu zapewniam klientom kompleksową obsługę, bez stresu i bez konieczności szukania wykonawców na własną rękę.
@@ -320,44 +209,40 @@
           Bazuję na sprawdzonych materiałach bardzo dobrej jakości, które są dostępne w sieciowych sklepach oraz hurtowniach. Dzięki temu mogę tworzyć wnętrza efektowne i trwałe, a jednocześnie przyjazne dla portfela.
         </p>
         <p>
-          Z TO TEN PLAN stworzysz przestrzeń, do której chce się wracać.<br>
-          <span class="strong">Zapraszam do współpracy!</span>
+          Z <b>TO TEN PLAN</b> stworzysz przestrzeń, do której chce się wracać.<br>
+          <strong style="color:#3492b7;">Zapraszam do współpracy!</strong>
         </p>
+
+        <div id="oferta"></div>
+        <div id="galeria"></div>
       </div>
+      <img src="grafika1.png" alt="Przykładowa realizacja To Ten Plan" class="hero-img" />
     </section>
-    <section class="contact-section" id="kontakt">
-      <div class="contact-heading">Kontakt</div>
-      <div class="contact-data">
-        <div class="contact-item">
-          <span>Email:</span>
-          <a href="mailto:totenpla@gmail.com">totenpla@gmail.com</a>
+
+    <section style="margin-top: 3.2em;">
+      <div class="contact-card" id="kontakt">
+        <strong>Kontakt:</strong>
+        <span>Paulina Łuczak</span>
+        <span><b>Mail:</b> <a href="mailto:totenplan@gmail.com">totenplan@gmail.com</a></span>
+        <span><b>Telefon:</b> <a href="tel:690895089">690 895 089</a></span>
+        <div class="socmed">
+          <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank" rel="noopener" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 2.1C15.8 2 12.3 2 12.3 2S8.2 2 7 2.1C5.7 2.2 4.5 2.6 3.5 3.6C2.5 4.6 2.1 5.8 2 7C1.9 8.2 1.9 12 1.9 12S1.9 15.8 2 17C2.1 18.2 2.5 19.4 3.5 20.4C4.5 21.4 5.7 21.8 7 21.9C8.2 22 12.3 22 12.3 22S15.8 22 17 21.9C18.3 21.8 19.5 21.4 20.5 20.4C21.5 19.4 21.9 18.2 22 17C22.1 15.8 22.1 12 22.1 12S22.1 8.2 22 7C21.9 5.8 21.5 4.6 20.5 3.6C19.5 2.6 18.3 2.2 17 2.1ZM14.3 12.7H12.8V19H10.2V12.7H9.2V10.4H10.2V9.3C10.2 7.8 10.9 7 12.5 7H14.1V9.1H13.3C12.8 9.1 12.7 9.3 12.7 9.7V10.4H14.1L13.9 12.7H12.7V19H14.3V12.7Z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/to_ten_plan/" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2C5.45 2 3.55 3.9 3.55 6.2V17.8C3.55 20.1 5.45 22 7.75 22H16.25C18.55 22 20.45 20.1 20.45 17.8V6.2C20.45 3.9 18.55 2 16.25 2H7.75ZM12 7.55A4.45 4.45 0 1 1 7.55 12 4.45 4.45 0 0 1 12 7.55ZM12 17.05A5.05 5.05 0 1 0 7 12 5.05 5.05 0 0 0 12 17.05ZM17.05 6.95A1.05 1.05 0 1 1 16 5.9 1.05 1.05 0 0 1 17.05 6.95Z"/></svg>
+            Instagram
+          </a>
         </div>
-        <div class="contact-item">
-          <span>Telefon:</span>
-          <a href="tel:690895089">690 895 089</a>
-        </div>
-      </div>
-      <div class="contact-socials">
-        <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 32 32" fill="#fff" style="margin-right:4px;vertical-align:middle"><rect width="32" height="32" rx="6" fill="#4267B2"/><path d="M22.675 21.293l.656-4.283h-4.1V14.53c0-1.172.574-2.314 2.413-2.314h1.87v-3.645A22.334 22.334 0 0 0 19.195 8c-3.18 0-5.266 1.85-5.266 5.19v2.485h-3.547v4.284h3.547v10.38a12.384 12.384 0 0 0 4.863 0V21.293h3.153z" fill="#fff"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/to_ten_plan/" target="_blank" rel="noopener" class="ig">
-          <svg width="22" height="22" viewBox="0 0 32 32" fill="#fff" style="margin-right:4px;vertical-align:middle"><rect width="32" height="32" rx="7" fill="#de5a7a"/><path d="M22.8 10.2A2.6 2.6 0 0 0 20.2 7.6H11.8a2.6 2.6 0 0 0-2.6 2.6v8.4a2.6 2.6 0 0 0 2.6 2.6h8.4a2.6 2.6 0 0 0 2.6-2.6v-8.4zM16 12.45a3.55 3.55 0 1 1 0 7.1 3.55 3.55 0 0 1 0-7.1zm0 5.85a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6zm4.38-5.8a.83.83 0 1 1 0-1.66.83.83 0 0 1 0 1.66z" fill="#fff"/></svg>
-          Instagram
-        </a>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="footer-links">
-      <a href="#oferta">Oferta</a> • 
-      <a href="#galeria">Galeria</a> • 
-      <a href="#kontakt">Kontakt</a>
-    </div>
+  <footer class="container-wide" style="text-align:center; margin-top:2em; margin-bottom:1em; color:#7a756c;">
     <small>
-      &copy; 2024 To Ten Plan &nbsp;|&nbsp; Design Studio by Paulina Łuczak
+      &copy; 2024 To Ten Plan • Projekt i wykonanie: Paulina Łuczak • <a href="#kontakt">Kontakt</a>
     </small>
   </footer>
 </body>
 </html>
+
