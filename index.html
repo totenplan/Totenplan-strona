@@ -7,15 +7,14 @@
   <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
   <style>
     :root {
-      --ecru-bg: #f4efe7;
-      --primary: #21211f;
-      --accent: #dfad7e;
-      --header-shadow: 0 2px 16px rgba(200,180,120,0.05);
+      --ivory-bg: #FAF9F6;
+      --primary: #23211c;
+      --accent: #e3c7a2;
     }
     html, body {
-      background: var(--ecru-bg) !important;
-      min-height: 100vh;
+      background: var(--ivory-bg) !important;
       color: var(--primary);
+      min-height: 100vh;
     }
     body {
       margin: 0;
@@ -23,13 +22,16 @@
       letter-spacing: 0.01em;
     }
     nav, main, footer, section {
-      background: var(--ecru-bg) !important;
+      background: var(--ivory-bg) !important;
     }
     nav {
-      box-shadow: var(--header-shadow);
+      box-shadow: 0 2px 16px rgba(200,180,120,0.05);
+    }
+    .container-fluid {
+      max-width: 100vw;
     }
     .container-wide {
-      width: min(1120px, 96vw);
+      width: min(98vw, 1600px);
       margin-inline: auto;
     }
     .header-flex {
@@ -47,10 +49,10 @@
       box-shadow: 0 2px 12px #ccc2a122;
       object-fit: cover;
       background: #fff;
-      border: 2px solid #e9e2d4;
+      border: 2px solid #e3c7a2;
     }
     .main-title {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       margin: 0;
       font-weight: 700;
       letter-spacing: 0.01em;
@@ -62,30 +64,35 @@
       font-weight: 400;
       font-family: 'Montserrat', sans-serif;
     }
+    .main-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 4vw;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 2.5em;
+    }
+    .intro-section {
+      flex: 2 1 560px;
+      min-width: 350px;
+      max-width: 900px;
+      font-size: 1.17em;
+      line-height: 1.7;
+    }
     .hero-img {
       display: block;
-      max-width: 420px;
+      max-width: 540px;
       width: 100%;
+      min-width: 260px;
       border-radius: 32px;
       margin: 0 0 0 auto;
       box-shadow: 0 6px 40px #cfbfa04a;
       background: #fff9f4;
       object-fit: cover;
     }
-    .main-flex {
-      display: flex;
-      align-items: flex-start;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .intro-section {
-      flex: 1 1 380px;
-      min-width: 340px;
-      max-width: 700px;
-    }
     .highlight {
-      background: #eee6d7;
+      background: #ede6da;
       border-radius: 8px;
       padding: 0.08em 0.5em;
       font-weight: 600;
@@ -93,17 +100,17 @@
       display: inline-block;
     }
     .contact-card {
-      background: #f8f6f2;
+      background: #f7f6f3;
       border-radius: 15px;
       padding: 1.1em 1.5em;
       margin: 1.5em 0;
-      box-shadow: 0 1px 10px #b7a38514;
+      box-shadow: 0 1px 10px #b7a3850d;
       display: flex;
       flex-direction: column;
       gap: 0.25em;
-      font-size: 1.05em;
-      border: 1px solid #e3dccd;
-      max-width: 350px;
+      font-size: 1.1em;
+      border: 1px solid #ece8de;
+      max-width: 380px;
     }
     .contact-card strong {
       color: var(--primary);
@@ -128,7 +135,7 @@
       transition: color 0.2s;
     }
     .socmed a:hover {
-      color: #e4974e;
+      color: #e3c7a2;
     }
     .socmed svg {
       height: 1.3em;
@@ -142,42 +149,42 @@
       z-index: 0;
       right: 0;
       top: 60px;
-      width: 410px;
+      width: 450px;
       max-width: 45vw;
       pointer-events: none;
-      opacity: 0.12;
+      opacity: 0.13;
     }
-    @media (max-width: 980px) {
+    @media (max-width: 1200px) {
       .container-wide { width: 99vw; }
-      .header-flex { flex-direction: column; gap: 1.1rem; align-items: flex-start;}
       .main-flex { flex-direction: column; gap: 2.5rem;}
       .hero-img { margin: 2rem 0 0 0; }
-      .modern-shape { width: 310px;}
+      .modern-shape { width: 280px;}
     }
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .main-title { font-size: 1.5rem; }
       .header-flex { gap: 0.7rem; }
       .hero-img { max-width: 99vw; }
       .modern-shape { display: none; }
+      .intro-section { font-size: 1em;}
     }
   </style>
 </head>
 <body>
   <nav class="container-fluid" style="background: #23211c;">
     <ul>
-      <li><strong style="color:#f5eee1; letter-spacing: 0.01em;">TO TEN PLAN</strong></li>
+      <li><strong style="color:#f9f7f2; letter-spacing: 0.01em;">TO TEN PLAN</strong></li>
     </ul>
     <ul>
       <li><a href="#oferta">Oferta</a></li>
       <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#kontakt" role="button" style="background: #3492b7; color: #fff;">Kontakt</a></li>
+      <li><a href="#kontakt" role="button" style="background: #e3c7a2; color: #23211c;">Kontakt</a></li>
     </ul>
   </nav>
 
   <!-- Nowoczesna grafika SVG -->
   <svg class="modern-shape" viewBox="0 0 350 180" fill="none">
     <path d="M30,60 Q70,10 140,60 T270,60 Q320,90 320,150 T240,160 Q180,180 120,130 Q70,90 30,60 Z"
-      fill="#eedcbb" opacity="0.82"/>
+      fill="#dfcbb0" opacity="0.94"/>
   </svg>
 
   <main class="container-wide" style="position:relative; z-index:2;">
@@ -191,7 +198,7 @@
 
     <section class="main-flex">
       <div class="intro-section">
-        <h2 style="font-size:2rem; font-weight:700; margin-bottom:0.7em; color: #23211c;">
+        <h2 style="font-size:2.1rem; font-weight:700; margin-bottom:0.7em; color: #23211c;">
           Tworzymy wnętrza, które odzwierciedlają Twój styl i ułatwiają codzienność
         </h2>
         <p>
@@ -210,9 +217,8 @@
         </p>
         <p>
           Z <b>TO TEN PLAN</b> stworzysz przestrzeń, do której chce się wracać.<br>
-          <strong style="color:#3492b7;">Zapraszam do współpracy!</strong>
+          <strong style="color:#e3c7a2;">Zapraszam do współpracy!</strong>
         </p>
-
         <div id="oferta"></div>
         <div id="galeria"></div>
       </div>
@@ -223,7 +229,7 @@
       <div class="contact-card" id="kontakt">
         <strong>Kontakt:</strong>
         <span>Paulina Łuczak</span>
-        <span><b>Mail:</b> <a href="mailto:totenplan@gmail.com">totenplan@gmail.com</a></span>
+        <span><b>Mail:</b> <a href="mailto:totenpla@gmail.com">totenpla@gmail.com</a></span>
         <span><b>Telefon:</b> <a href="tel:690895089">690 895 089</a></span>
         <div class="socmed">
           <a href="https://www.facebook.com/people/To-Ten-Plan/100087260530991/" target="_blank" rel="noopener" title="Facebook">
