@@ -157,10 +157,26 @@
       color: #333;
     }
     @media (max-width: 768px) {
-      .header-left, .header-center, .header-right {
-        flex: 100%;
-        text-align: center;
-      }
+  header {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-left, .header-center, .header-right {
+    flex: initial;
+    text-align: initial;
+  }
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  nav a {
+    margin: 10px 15px;
+  }
+}
       nav {
         flex-direction: column;
         align-items: center;
