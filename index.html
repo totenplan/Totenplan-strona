@@ -157,6 +157,34 @@
       color: #333;
     }
     @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-left, .header-center, .header-right {
+    flex: initial;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 16px;
+  }
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  nav a {
+    margin: 5px 10px;
+  }
+  .hero img {
+    max-width: 90%;
+    height: auto;
+  }
   .header-title {
     font-size: 14px;
   }
@@ -255,6 +283,7 @@
     <img src="grafika1.png" alt="Hasło promocyjne" />
     <h1 style="font-size: 36px; font-family: 'Playfair Display', serif;">Tworzymy wnętrza, do których chce się wracać.</h1>
   </section>
+
 
 
   <section id="o-mnie" class="section">
